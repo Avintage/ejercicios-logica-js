@@ -233,3 +233,14 @@ const funcionValidadora = (numero) =>{
 
 //funcionValidadora(23)
 
+//14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+const convertir = (gradosCelsius) => {
+  if(!gradosCelsius) return console.log("ingresa una cifra");
+  
+  let gradosFahrenheit = (gradosCelsius * 1.8) + 32;
+  
+  return console.log("los grados Fahrenheist son " + gradosFahrenheit + " grados");
+}
+
+//convertir()
