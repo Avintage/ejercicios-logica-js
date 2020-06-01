@@ -173,3 +173,63 @@ const factorial2 = (numero) =>{
 
 //factorial2(5);
 
+//12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+const numeroPrimo = (numero) => {
+  
+  for (let i=2; i<numero; i++){
+    
+    if (numero % i === 0) {
+      console.log(i + " es un multiplo de " + numero);
+      console.log(numero + " no es un numero primo porque " + i + " es un multiplo");
+      return false;
+    }
+  if (numero === 1) {
+    console.log("Me has pasado el numero 1, recuerda que NO es un numero primo");
+  } else {
+    console.log("Como el numero ingresado no tuvo mas múltiplos entonces determinamos que SI es un numero primo.");
+    }
+  }
+}  
+
+//numeroPrimo()
+
+//segundo ejemplo
+
+const numeroPrimo2 = (numero = undefined) =>{
+  if (numero === undefined) return console.log("ingresa un numero");
+  if (Math.sign(numero) === -1) return console.log("tu numero es negativo");
+  if (numero === 0) return console.log("tu numero es un cero, ingresa otro numero");
+  
+  let divisible = false;
+  
+  for (let i=2; i<numero; i++) {
+    if((numero % i) === 0) {
+      divisible = true;
+      break;
+    }
+  }
+  
+  return (divisible)
+  ?console.log (numero +" no es un numero primo")
+  :console.log (numero + " es un numero primo");
+}
+
+//numeroPrimo2(5)
+
+//13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+
+const funcionValidadora = (numero) =>{
+  
+  if(numero == 0) return console.log("no puedes poner el cero");
+  if(!numero) return console.log("ingresa un numero");
+  
+  return (numero % 2 === 0)
+    ?console.log(`El ${numero} es un numero par`)
+    :console.log(`El ${numero} es un numero impar`);
+  
+  }
+
+
+//funcionValidadora(23)
+
