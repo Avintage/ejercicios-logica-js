@@ -244,3 +244,132 @@ const convertir = (gradosCelsius) => {
 }
 
 //convertir()
+
+//15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+
+const convertidor = (numero) => {
+  numero = numero.toString();
+  let arreglo = numero.split("").reverse().reduce(function(a,b,i){
+      return (y === '1') 
+        ? x + Math.pow(2, i) 
+        : x;
+    }, 0);
+}
+
+//convertidor(120)
+
+//segundo ejemplo
+
+const convertidorBinario = (numero,base) => {
+  // if(base === 2){
+    return console.log(parseInt(numero,base))
+ }
+
+
+//convertidorBinario(100,2)
+
+//16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+const descuento =(numero,porcentaje) => console.log(numero-(numero*porcentaje)/100);
+
+//descuento(1000,30)
+
+//17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+const calcularanios = (fecha = undefined) =>{
+
+  if (fecha === undefined) return console.log("debes ingresar una fecha");
+  if (!(fecha instanceof Date)) return console.log("debe ser una fecha valida");
+
+  let fechaActual = new date().getTime() - fecha.getTime(),
+   anios = 1000 * 60 * 60 * 24 * 365,
+   operacion = math.floor(fechaActual/anios);
+
+   return console.log(operacion);
+}
+
+//calcularanios("hola");
+
+
+//18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+
+function vowelCounter(str) {
+  
+  str1 = str;
+  str = str.replace(/ /g, "");
+  
+ let vocales = ["a", "e", "i", "o", "u"], 
+      vCounter = 0,
+      cCounter = 0;
+
+  for (let i of str.toLowerCase()){
+      if (vocales.includes(i)) {
+         vCounter++;
+      } else {
+        cCounter++;
+      }
+  }
+  console.log(`Tu cadena de texto es: ${str1} contiene ${vCounter} vocales`);
+  console.log(`Y contiene ${cCounter} consonantes`);
+  
+}
+
+ //vowelCounter('Hola mundo');
+
+//segundo metodo
+
+function contadorVocales (str) {
+  
+  str = str.replace(/_/g,'');
+  
+  let allVowels = 'aeiouAEIOU';
+  let vCounter = 0;
+  
+  for(let i = 0; i < str.length; i++) {
+    if(allVowels.indexOf(str[i]) !== -1) {
+      console.log("The value of str[i] is: " + str[i]);
+      //vCounter += 1;
+    }
+    }
+  }
+  
+  //console.log(contadorVocales("hola Mundo"));
+
+
+  //19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+function validador (str = undefined) {
+  
+  if (str === undefined) return console.log("debes ingresar una palabra");
+  
+  if (typeof str === "string") {
+  return console.log("esto es verdadero");
+} else{
+  return console.log("esto es falso");
+}
+  }
+
+//validador("Jonathan Mircha")
+
+
+//20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+const validador = (email ="") => {
+  
+  if (!email) return console.log("ingresa un email");
+  if (typeof email !== "string") return console.log("debes poner un email valido");
+  
+  let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+  
+  return (expReg)
+    ?console.log(`El email: ${email} es valido`)
+    :console.log(`El email: ${email} no es valido`);
+
+}
+
+//validador("a@gd.cl")
+
+
+
+
