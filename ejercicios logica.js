@@ -371,5 +371,141 @@ const validador = (email ="") => {
 //validador("a@gd.cl")
 
 
+//21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
 
+const arreglo = (arr = undefined) => {
+  
+  if (arr === undefined) return console.log("ingresa un arreglo");
+  if (!(arr instanceof Array)) return console.log("el arreglo es invalido");
+  if (arr.length === 0) return console.log("el arreglo esta vacio");
+  
+  for(let num of arr){
+    if (typeof num !== "number") return console.log("tu arreglo no tiene numeros");
+  }
+  
+  const newArr = arr.map(el=>el*el);
+  
+  return console.log("arreglo original " + arr + " nuevo arreglo " + newArr);
+  
+}
+
+//arreglo([1,4,6])
+
+
+//22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+
+const arrMinMax = (arr = undefined) =>{
+  
+  if (arr === undefined) return console.log("ingresa un arreglo");
+  if (!(arr instanceof Array)) return console.log("no es un arreglo");
+  if (arr.length === 0) return console.log("tu arreglo tiene que llevar elementos");
+  
+  for(let num of arr){
+    if (typeof num !== "number") return console.info(`el ${num} no es un numero`) 
+  }
+  
+ return console.log(`arreglo original es ${arr}\n el valor mayor es ${Math.max(...arr)}\n el valor menor es ${Math.min(...arr)}`);
+  
+}
+
+//arrMinMax([3,7,23,10])
+
+
+//23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+
+const arrMinMax = (arr = undefined) =>{
+  
+  if (arr === undefined) return console.log("ingresa un arreglo");
+  if (!(arr instanceof Array)) return console.log("no es un arreglo");
+  if (arr.length === 0) return console.log("tu arreglo tiene que llevar elementos");
+  
+  for(let num of arr){
+    if (typeof num !== "number") return console.info(`el ${num} no es un numero`) 
+  }
+  
+  return console.log({
+    pares:arr.filter(num=>num % 2 === 0),
+    impares:arr.filter(num=>num % 2 === 1)
+  })
+  
+}
+
+//arrMinMax([1,2,3,4,5,6,7,8,9,0])
+
+
+//24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+
+// const arr = [7, 5,7,8,6];
+
+// console.log(arr.sort((a, b) => a - b ));
+
+const ejemArr = (arr = undefined) => {
+  
+  if (arr === undefined) return console.log("debes insertar un arreglo");
+  if (!(arr instanceof Array)) return console.log("esto no es un array");
+  if (arr.length === 0) return console.log("no puede ser cero");
+    
+  for(let num of arr){
+    if (typeof num !== "number") return console.log(arr + " ??? el arreglo tiene quer tener numeros")
+  }
+  
+   //primer metodo
+  
+// console.log(`El orden asc ${arr.sort((a, b) => a - b )}`);
+// console.log(`El orden desc ${arr.sort((a, b) => b - a )}`);
+  
+  //segundo metodo con map
+  
+  //console.log(arr.map(el => el).sort());
+  //console.log(arr.map(el => el).sort().reverse());
+  
+
+}
+
+//ejemArr([7,5,7,8,6])
+
+
+//25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+
+const ejemArr = (arr = undefined) => {
+  
+  if (arr === undefined) return console.log("debes insertar un arreglo");
+  if (!(arr instanceof Array)) return console.log("esto no es un array");
+  if (arr.length === 0) return console.log("no puede ser cero");
+    
+  // for(let num of arr){
+  //   if (typeof num !== "number") return console.log(arr + " ??? el arreglo tiene quer tener numeros")
+  // }
+   
+  let arrNoRepetidos = [...new Set(arr)];
+  
+  console.log("Arreglo sin repetidos " + arrNoRepetidos);
+  
+}
+
+//ejemArr(["x", 10, "x", 2, "10", 10, true, true])
+
+
+
+//26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+
+const ejemArr = (arr = undefined) => {
+  
+  if (arr === undefined) return console.log("debes insertar un arreglo");
+  if (!(arr instanceof Array)) return console.log("esto no es un array");
+  if (arr.length === 0) return console.log("no puede ser cero");
+    
+  for(let num of arr){
+    if (typeof num !== "number") return console.log(arr + " ??? el arreglo tiene quer tener numeros")
+  }
+  
+  let contador = arr.length;
+  let  suma = arr.reduce((previous, current) => current += previous);
+  
+  return console.log(`el promedio es ${suma/=contador}`);
+  
+}
+
+//ejemArr([9,8,7,6,5,4,3,2,1,0])
 
